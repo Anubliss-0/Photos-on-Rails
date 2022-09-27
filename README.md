@@ -41,7 +41,7 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-Photos on Rails is a rails based content mangement system which allows developers to create rails based photo galleries which can be easily updated by clients via thier browser.
+Photos on Rails is a content mangement system for photos which allows developers to create Ruby on rails based photo galleries which can be easily updated by clients via thier browser.
 <br />
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
