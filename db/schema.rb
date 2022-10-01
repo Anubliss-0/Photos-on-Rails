@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_10_01_104614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,15 +28,46 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_01_104614) do
     t.datetime "updated_at", null: false
     t.index ["album_id"], name: "index_bookmarks_on_album_id"
     t.index ["photo_id"], name: "index_bookmarks_on_photo_id"
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_09_27_115241) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "collection_id"
+    t.bigint "photo_id"
+    t.index ["collection_id"], name: "index_bookmarks_on_collection_id"
+    t.index ["photo_id"], name: "index_bookmarks_on_photo_id"
+  end
+
+  create_table "collections", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "photo_id"
+    t.index ["photo_id"], name: "index_collections_on_photo_id"
+>>>>>>> dbcd9e0bb25eb181491298d43efad4bdd80eefe9
   end
 
   create_table "photos", force: :cascade do |t|
     t.string "title"
+<<<<<<< HEAD
+=======
+    t.text "description"
+>>>>>>> dbcd9e0bb25eb181491298d43efad4bdd80eefe9
     t.string "film"
     t.string "camera"
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.bigint "collection_id"
+    t.index ["collection_id"], name: "index_photos_on_collection_id"
+>>>>>>> dbcd9e0bb25eb181491298d43efad4bdd80eefe9
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +82,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_01_104614) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "bookmarks", "albums"
   add_foreign_key "bookmarks", "photos"
+=======
+  add_foreign_key "bookmarks", "collections"
+  add_foreign_key "bookmarks", "photos"
+  add_foreign_key "collections", "photos"
+  add_foreign_key "photos", "collections"
+>>>>>>> dbcd9e0bb25eb181491298d43efad4bdd80eefe9
 end
