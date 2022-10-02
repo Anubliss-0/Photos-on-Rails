@@ -1,0 +1,7 @@
+<h1>Create an Album</h1>
+<%= simple_form_for @collection do |f| %>
+  <%= f.input :name %>
+<h2>Add photos to your album:</h2>
+  <%= association :photos %>
+  <%= f.button :submit, "Create" %>
+<% end %>
