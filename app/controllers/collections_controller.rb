@@ -8,8 +8,16 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     authorize @collection
-    if @collection.save
-      @bookmark = Bookmark.new()
+    if @collection.save!
+      params[:collection][:photo_ids].delete("")
+      params[:collection][:photo_ids].each do |photo|
+        @bookmark = Bookmark.new(photo_id: photo.to_i, collection: @collection)
+        @bookmark.save!
+      end
+      flash[:notice] = "Album saved."
+      redirect_to collection_path(@collection)
+    else
+      render :new
     end
   end
 

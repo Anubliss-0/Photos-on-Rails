@@ -2,6 +2,6 @@
 <%= simple_form_for @collection do |f| %>
   <%= f.input :name %>
 <h2>Add photos to your album:</h2>
-  <%= association :photos %>
+  <%= f.association :photos %>
   <%= f.button :submit, "Create" %>
 <% end %>
