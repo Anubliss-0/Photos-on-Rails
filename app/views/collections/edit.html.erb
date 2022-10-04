@@ -1,0 +1,7 @@
+<h1>Edit Album Title or Description</h1>
+<% @collection = Collection.find(params[:id]) %>
+<%= simple_form_for @collection do |f| %>
+  <%= f.input :name %>
+   <%= f.input :description %>
+  <%= f.button :submit, "Update" %>
+<% end %>
