@@ -5,4 +5,14 @@ class CollectionPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def create?
+    # current_user.admin == true
+    #for testing purposes setting this to true
+    true
+  end
+
+  def show?
+    true
+  end
 end

@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "private": "true",
+  "name": "Photos-on-rails",
+  "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.1.0",
     "@hotwired/turbo-rails": "^7.2.0",
@@ -11,5 +11,10 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Anubliss-0/Photos-on-Rails.git",
+  "author": "Clayton Flaherty <claytonflaherty92@gmail.com>",
+  "license": "MIT"
 }
