@@ -11,4 +11,8 @@ class CollectionPolicy < ApplicationPolicy
     #for testing purposes setting this to true
     true
   end
+
+  def show?
+    true
+  end
 end

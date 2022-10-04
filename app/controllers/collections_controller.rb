@@ -21,6 +21,12 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def show
+    @collection = Collection.find(params[:id])
+    authorize @collection
+    @bookmarks = Bookmark.all.select { |bookmark| bookmark.collection_id = @collection.id}
+  end
+
   private
 
   def collection_params
