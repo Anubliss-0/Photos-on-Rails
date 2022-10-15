@@ -12,7 +12,6 @@ class PhotosController < ApplicationController
       params[:photo][:collection_ids].delete("")
       params[:photo][:collection_ids].each do |collection|
         @bookmark = Bookmark.new(photo: @photo, collection_id: collection)
-        raise
         @bookmark.save!
       end
       flash[:notice] = "Photo saved."
@@ -22,9 +21,14 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+    authorize @photo
+  end
+
   private
 
   def photo_params
-    params.require(:photo).permit(:title, :description, :film, :camera)
+    params.require(:photo).permit(:title, :description, :film, :camera, :photo)
   end
 end
