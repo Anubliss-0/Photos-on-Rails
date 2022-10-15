@@ -79,3 +79,6 @@ end
 
 #adding pundit
 gem "pundit"
+
+# cloudinary image hosting
+gem "cloudinary"
