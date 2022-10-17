@@ -5,4 +5,8 @@ class PhotoPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def create?
+    true
+  end
 end

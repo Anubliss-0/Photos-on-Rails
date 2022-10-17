@@ -82,3 +82,7 @@ gem "pundit"
 
 # cloudinary image hosting
 gem "cloudinary"
+
+
+gem "dotenv-rails", groups: [:development, :test]
+
