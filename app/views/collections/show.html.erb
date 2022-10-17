@@ -6,3 +6,4 @@
 <% end %>
 
 <%= link_to "edit collection", edit_collection_path(@collection) %>
+<%= link_to "Delete collection", @collection, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
