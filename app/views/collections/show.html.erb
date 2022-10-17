@@ -4,3 +4,5 @@
   <% photo = Photo.find(bookmark.photo_id) %>
   <%= cl_image_tag photo.photo.key %>
 <% end %>
+
+<%= link_to "edit collection", edit_collection_path(@collection) %>

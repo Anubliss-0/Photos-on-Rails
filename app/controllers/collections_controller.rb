@@ -39,6 +39,7 @@ class CollectionsController < ApplicationController
 
   def update
     @collection = Collection.find(params[:id])
+    @bookmarks = @collection.bookmarks
     authorize @collection
     if @collection.update(collection_params)
       redirect_to collection_path(@collection)

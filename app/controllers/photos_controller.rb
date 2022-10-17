@@ -40,6 +40,7 @@ class PhotosController < ApplicationController
       params[:photo][:collection_ids].each do |collection|
         @bookmark = Bookmark.new(photo: @photo, collection_id: collection)
         @bookmark.save!
+        redirect_to photo_path(@photo)
       end
     end
   end
