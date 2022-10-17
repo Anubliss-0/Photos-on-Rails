@@ -30,6 +30,14 @@ class PhotosController < ApplicationController
     authorize @photo
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    authorize @photo
+    @photo.destroy
+    flash[:notice] = "Photo deleted."
+    redirect_to photos_path, status: :see_other
+  end
+
   def edit
     @photo = Photo.find(params[:id])
     authorize @photo
