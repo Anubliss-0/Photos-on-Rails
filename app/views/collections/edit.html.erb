@@ -5,3 +5,11 @@
    <%= f.input :description %>
   <%= f.button :submit, "Update" %>
 <% end %>
+
+<h2>Edit photos</h2>
+<% @collection.photos.each do |photo| %>
+  <%= photo.title %>
+  <%= cl_image_tag photo.photo.key, height: 60, width: 60 %>
+  <%= link_to "Edit", edit_photo_path(photo.id) %>
+  <%= link_to "Remove", bookmark_path(photo.bookmark_ids), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% end %>
