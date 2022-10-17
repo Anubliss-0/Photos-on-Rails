@@ -1,8 +1,26 @@
 .navbar {
   justify-content: space-between;
   background: white;
+
+  .name span {
+    font-size: 2.5rem;
+  }
+
+  .navlinks {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0rem 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
 }
 
-.navbar {
-  flex-grow: 0;
+@media (max-width: $breakpoint-mobile) {
+  .navbar {
+    .name span {
+font-size: 2rem;
+    }
+  }
 }
