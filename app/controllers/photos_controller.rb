@@ -27,6 +27,23 @@ class PhotosController < ApplicationController
     authorize @photo
   end
 
+  def edit
+    @photo = Photo.find(params[:id])
+    authorize @photo
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    authorize @photo
+    if @photo.save!
+      params[:photo][:collection_ids].delete("")
+      params[:photo][:collection_ids].each do |collection|
+        @bookmark = Bookmark.new(photo: @photo, collection_id: collection)
+        @bookmark.save!
+      end
+    end
+  end
+
   private
 
   def photo_params

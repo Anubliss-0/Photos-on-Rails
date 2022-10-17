@@ -1,6 +1,6 @@
 <h1><%=@collection.name %></h1>
 <h2><%= @collection.description %></h2>
-<% @bookmarks.each do |bookmark| %>
+<% @collection.bookmarks.each do |bookmark| %>
   <% photo = Photo.find(bookmark.photo_id) %>
   <%= cl_image_tag photo.photo.key %>
 <% end %>
