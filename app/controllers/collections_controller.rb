@@ -27,6 +27,20 @@ class CollectionsController < ApplicationController
     @bookmarks = Bookmark.all.select { |bookmark| bookmark.collection_id = @collection.id}
   end
 
+  def editing
+    @collection = Collection.find(params[:collect_id])
+    authorize @collection
+  end
+
+  def update
+    @collection = Collection.find(params[:id])
+    authorize @collection
+    if @collection.update(collection_params)
+      redirect_to collection_path(@collection)
+    else
+      render :new
+    end
+  end
   private
 
   def collection_params
