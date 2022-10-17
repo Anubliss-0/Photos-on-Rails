@@ -1,0 +1,10 @@
+<h1>All photos</h1>
+<% @photos.each do |photo| %>
+<div>
+  <%= cl_image_tag photo.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= photo.description %>
+  <%= photo.film %>
+  <%= photo.camera %>
+  <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
+  </div>
+<% end %>
