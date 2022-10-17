@@ -1,6 +1,9 @@
 <h1><%=@collection.name %></h1>
 <h2><%= @collection.description %></h2>
-<% @bookmarks.each do |bookmark| %>
+<% @collection.bookmarks.each do |bookmark| %>
   <% photo = Photo.find(bookmark.photo_id) %>
   <%= cl_image_tag photo.photo.key %>
 <% end %>
+
+<%= link_to "edit collection", edit_collection_path(@collection) %>
+<%= link_to "Delete collection", @collection, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

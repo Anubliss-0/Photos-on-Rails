@@ -4,3 +4,4 @@
 <%= @photo.film %>
 <%= @photo.camera %>
 <%= link_to "Delete Photo", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
+<%= link_to "Edit information", edit_photo_path(@photo) %>

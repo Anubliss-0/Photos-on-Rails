@@ -1,4 +1,9 @@
 class CollectionsController < ApplicationController
+
+  def index
+    @collections = Collection.all
+  end
+
   def new
     @collection = Collection.new
     @bookmark = Bookmark.new
@@ -34,6 +39,7 @@ class CollectionsController < ApplicationController
 
   def update
     @collection = Collection.find(params[:id])
+    @bookmarks = @collection.bookmarks
     authorize @collection
     if @collection.update(collection_params)
       redirect_to collection_path(@collection)
@@ -42,13 +48,13 @@ class CollectionsController < ApplicationController
     end
   end
 
-def destroy
-  @collection = Collection.find(params[:id])
-  authorize @collection
-  @collection.destroy
-  flash[:notice] = "#{@collection.name} has been deleted."
-  redirect_to collection_path, status: :see_other
-end
+  def destroy
+    @collection = Collection.find(params[:id])
+    authorize @collection
+    @collection.destroy
+    flash[:notice] = "#{@collection.name} has been deleted."
+    redirect_to collection_path, status: :see_other
+  end
 
   private
 
