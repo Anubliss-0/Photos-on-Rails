@@ -13,4 +13,8 @@ class PhotoPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def destroy?
+    true
+  end
 end
