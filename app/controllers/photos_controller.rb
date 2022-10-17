@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
 
+
   def new
     @photo = Photo.new
     @bookmark = Bookmark.new
@@ -27,4 +28,5 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:title, :description, :film, :camera)
   end
+
 end
