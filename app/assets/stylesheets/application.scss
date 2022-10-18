@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.hidden {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
