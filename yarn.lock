@@ -9,6 +9,15 @@
 
 "@hotwired/stimulus@^3.1.0":
   version "3.1.0"
+<<<<<<< HEAD
+  resolved "https://registry.npmjs.org/@hotwired/stimulus/-/stimulus-3.1.0.tgz"
+  integrity sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg==
+
+"@hotwired/turbo-rails@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@hotwired/turbo-rails/-/turbo-rails-7.2.0.tgz"
+  integrity sha512-RxJJGINeLa2lyI078LLSbqZDI7RarxTDMVlgKnsLvtFEn8Pa7ySEcDUxHp5YiLXGbLacAIH/dcfD0JfCWe5Dqw==
+=======
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
   integrity sha512-iDMHUhiEJ1xFeicyHcZQQgBzhtk5mPR0QZO3L6wtqzMsJEk2TKECuCQTGKjm+KJTHVY0dKq1dOOAWvODjpd2Mg==
 
@@ -16,14 +25,22 @@
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.2.2.tgz#577d0d2d8253f395e6c922e3afaf6a9483a75487"
   integrity sha512-UlHB++XYlNprpfro4YbywUXFC8QuqH59I+xuU26WMu1mE+RbV2EVS7ARlcUlwzl3PFgsKgJ+xxrJ4HW5gZkJdQ==
+>>>>>>> fdb8c2d516f7f1850b32106fa1b9ab507a09046c
   dependencies:
     "@hotwired/turbo" "^7.2.2"
     "@rails/actioncable" "^7.0"
 
+<<<<<<< HEAD
+"@hotwired/turbo@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.npmjs.org/@hotwired/turbo/-/turbo-7.2.0.tgz"
+  integrity sha512-CYr6N9NfqsjhmZx1xVQ8zYcDo4hTm7sTUpJydbNgMRyG+YfF/9ADIQQ2TtcBdkl2zi/12a3OTWX0UMzNZnAK9w==
+=======
 "@hotwired/turbo@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@hotwired/turbo/-/turbo-7.2.2.tgz#69e1f4be7f468690fa31791099e2a837e88c9518"
   integrity sha512-YfTHwnur3tDFS/D5JYstU+09Z3bvCF6euqqXajHAks2lTSIDbLc8gMp8yLomD+cAC337h1wnv0oWduK6+6pUDw==
+>>>>>>> fdb8c2d516f7f1850b32106fa1b9ab507a09046c
 
 "@jridgewell/gen-mapping@^0.3.0":
   version "0.3.2"
@@ -69,6 +86,16 @@
   version "2.11.6"
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.6.tgz"
   integrity sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==
+<<<<<<< HEAD
+
+"@prettier/plugin-ruby@^3.2.2":
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-3.2.2.tgz#43c9d85349032f74d34c4f57e6a77487d5c5bdc1"
+  integrity sha512-Vc7jVE39Fgswl517ET4kPtpnoRWE6XTi1Sivd84rZyomYnHYUmvUsEeoOf6tVhzTuIXE5XVQB1YCG2hulrwR3Q==
+  dependencies:
+    prettier ">=2.3.0"
+=======
+>>>>>>> fdb8c2d516f7f1850b32106fa1b9ab507a09046c
 
 "@rails/actioncable@^7.0":
   version "7.0.4"
@@ -596,6 +623,24 @@ pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
+<<<<<<< HEAD
+prettier-html-templates@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/prettier-html-templates/-/prettier-html-templates-0.1.0.tgz#dfa12bd71c032e3b796e8c645210c5614403575d"
+  integrity sha512-KdLveYzO2kJLiwUAebd5UFeKP8h3OqFhOiLbkgeIuS1WNoCRTyxW4KuyGfbh3F+Rp/2A6mipRxCq2zPi+//pmg==
+
+prettier-plugin-erb@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-erb/-/prettier-plugin-erb-0.4.0.tgz#5a2a86e02c6360481187aaadd165bc598eda4412"
+  integrity sha512-5RAdvT5BBf29hfC8GmqiMRFiD5g4BZGZDERZHvM5ouOor2TVT0jM0ntmCzFpS2Q32OkUAGFYsRxXDoYscvToXA==
+  dependencies:
+    prettier-html-templates "^0.1.0"
+
+prettier@>=2.3.0, prettier@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
 punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
@@ -641,6 +686,53 @@ safe-buffer@^5.1.0:
   resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
   integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
 
+=======
+punycode@^2.1.0:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz"
+  integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+randombytes@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/randombytes/-/randombytes-2.1.0.tgz"
+  integrity sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==
+  dependencies:
+    safe-buffer "^5.1.0"
+
+rechoir@^0.7.0:
+  version "0.7.1"
+  resolved "https://registry.npmjs.org/rechoir/-/rechoir-0.7.1.tgz"
+  integrity sha512-/njmZ8s1wVeR6pjTZ+0nCnv8SpZNRMT2D1RLOJQESlYFDBvwpTA4KWJpZ+sBJ4+vhjILRcK7JIFdGCdxEAAitg==
+  dependencies:
+    resolve "^1.9.0"
+
+resolve-cwd@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/resolve-cwd/-/resolve-cwd-3.0.0.tgz"
+  integrity sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==
+  dependencies:
+    resolve-from "^5.0.0"
+
+resolve-from@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/resolve-from/-/resolve-from-5.0.0.tgz"
+  integrity sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
+
+resolve@^1.9.0:
+  version "1.22.1"
+  resolved "https://registry.npmjs.org/resolve/-/resolve-1.22.1.tgz"
+  integrity sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==
+  dependencies:
+    is-core-module "^2.9.0"
+    path-parse "^1.0.7"
+    supports-preserve-symlinks-flag "^1.0.0"
+
+safe-buffer@^5.1.0:
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
+  integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+
+>>>>>>> fdb8c2d516f7f1850b32106fa1b9ab507a09046c
 schema-utils@^3.1.0, schema-utils@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz"
