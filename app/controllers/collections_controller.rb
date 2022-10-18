@@ -32,9 +32,13 @@ class CollectionsController < ApplicationController
     @bookmarks = Bookmark.all.select { |bookmark| bookmark.collection_id = @collection.id}
   end
 
-  def editing
-    @collection = Collection.find(params[:collect_id])
+  def edit
+    @collection = Collection.find(params[:id])
     authorize @collection
+    @cover = []
+    @collection.photos.each_with_index do |item, i|
+      @cover << ["#{item.title}", "#{i}"]
+    end
   end
 
   def update

@@ -4,7 +4,6 @@
   <% if collection.cover != nil %>
     <%= cl_image_tag collection.photos[collection.cover].photo.key, height: 100, width: 100 %>
   <% else %>
-    <%# <%= cl_image_tag collection.photos[0].photo.key, height: 100, width: 100 %>
     <span>No cover image selected</span>
   <% end %>
 <% end %>

@@ -1,13 +1,8 @@
 <h1>Edit Album Title or Description</h1>
-<% @collection = Collection.find(params[:id]) %>
-<% arr = [] %>
-<% @collection.photos.each_with_index do |item, i| %>
-  <% arr << ["#{item.title}", "#{i}"] %>
-<% end %>
 <%= simple_form_for @collection do |f| %>
   <%= f.input :name %>
    <%= f.input :description %>
-  <%= f.input :cover, collection: arr %>
+  <%= f.input :cover, collection: @cover %>
   <%= f.button :submit, "Update" %>
 <% end %>
 
