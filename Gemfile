@@ -89,3 +89,5 @@ gem "dotenv-rails", groups: [:development, :test]
 # erb linter
 gem "erb_lint"
 
+#faker
+gem "faker"
