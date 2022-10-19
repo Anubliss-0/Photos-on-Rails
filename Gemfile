@@ -91,3 +91,6 @@ gem "erb_lint"
 
 #faker
 gem "faker"
+
+#contact-form
+gem 'mail_form', '~> 1.9'
