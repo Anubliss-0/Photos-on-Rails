@@ -5,6 +5,10 @@ class Contact < MailForm::Base
   attribute :message
 
   def headers
-    { to: "PLEASE-CHANGE-ME@example.org" }
-  end
+    {
+      to: "junkclay92@email.com",
+      subject: "Inqueries Form",
+      from: "admin@yourdomain.com",  # change this to be the email it is coming from
+      reply_to: %("#{name}" <#{email}>)
+    }  end
 end
