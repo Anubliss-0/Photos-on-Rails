@@ -50,9 +50,11 @@ class PhotosController < ApplicationController
       params[:photo][:collection_ids].delete("")
       params[:photo][:collection_ids].each do |collection|
         @bookmark = Bookmark.new(photo: @photo, collection_id: collection)
+        if !@photo.bookmarks.any? { |bookmark| bookmark.photo_id == @bookmark.photo_id && bookmark.collection_id == @bookmark.collection_id }
         @bookmark.save!
-        redirect_to photo_path(@photo)
+        end
       end
+      redirect_to photo_path(@photo)
     else
       render :new
     end
