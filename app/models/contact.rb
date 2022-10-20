@@ -8,7 +8,7 @@ class Contact < MailForm::Base
     {
       to: "junkclay92@email.com",
       subject: "Inqueries Form",
-      from: "admin@yourdomain.com",  # change this to be the email it is coming from
-      reply_to: %("#{name}" <#{email}>)
+      from: "claytonflaherty92@gmail.com",  # change this to be the email it is coming from
+      reply_to: "claytonflahety92@gmail.com"
     }  end
 end
