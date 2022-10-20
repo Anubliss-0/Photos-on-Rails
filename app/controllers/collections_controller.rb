@@ -57,7 +57,7 @@ class CollectionsController < ApplicationController
     authorize @collection
     @collection.destroy
     flash[:notice] = "#{@collection.name} has been deleted."
-    redirect_to collection_path, status: :see_other
+    redirect_to collections_path, status: :see_other
   end
 
   private

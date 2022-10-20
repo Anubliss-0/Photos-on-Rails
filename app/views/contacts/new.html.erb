@@ -1,0 +1,18 @@
+    <h1>Contact Railscoder</h1>
+    <p>I'd love to hear from you. Send me a message below.</p>
+    <%= simple_form_for @contact do |f| %>
+    <% if @contact.errors.any? %>
+
+            <div><%= pluralize(@contact.errors.count, "error") %> prohibited this page from being saved:</div>
+            <ul>
+                <% @contact.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+
+    <% end %>
+ <%= f.input :name %>
+<%= f.input :email %>
+<%= f.input :message %>
+  <%= f.button :submit, "Send" %>
+    <% end %>
