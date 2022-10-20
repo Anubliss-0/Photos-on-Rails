@@ -6,9 +6,9 @@ class Contact < MailForm::Base
 
   def headers
     {
-      to: "junkclay92@email.com",
+      to: "INSERT EMAIL",
       subject: "Inqueries Form",
-      from: "claytonflaherty92@gmail.com",  # change this to be the email it is coming from
-      reply_to: "claytonflahety92@gmail.com"
+      from: "INSERT EMAIL",  # change this to be the email it is coming from
+      reply_to: "INSERT EMAIL"
     }  end
 end
