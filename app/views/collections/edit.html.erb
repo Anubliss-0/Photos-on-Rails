@@ -6,6 +6,11 @@
   <%= f.button :submit, "Update" %>
 <% end %>
 
+<%= turbo_frame_tag "show_photos" do %>
+  <%= link_to "Add photo", photos_path(params[:id]), data: { turbo_frame: "show_photos" } %>
+<% end %>
+
+
 <h2>Edit photos</h2>
 <% @collection.photos.each do |photo| %>
   <%= photo.title %>

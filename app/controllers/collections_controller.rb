@@ -33,6 +33,7 @@ class CollectionsController < ApplicationController
   end
 
   def edit
+    @photos = Photo.all
     @collection = Collection.find(params[:id])
     authorize @collection
     @cover = []
