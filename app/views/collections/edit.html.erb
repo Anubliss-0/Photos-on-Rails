@@ -7,10 +7,9 @@
 <% end %>
 
 <h2>Edit photos</h2>
-<% @collection.photos.each_with_index do |photo, i| %>
-  <%= photo.title %>
-  <%= cl_image_tag photo.photo.key, height: 60, width: 60 %>
-  <%= link_to "Edit", edit_photo_path(photo.id) %>
-  <%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <%# <% raise %> %>
-<% end %>
+  <% @collection.photos.each_with_index do |photo, i| %>
+    <%= photo.title %>
+    <%= cl_image_tag photo.photo.key, height: 60, width: 60 %>
+    <%= link_to "Edit", edit_photo_path(photo.id) %>
+    <%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i]), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
