@@ -8,10 +8,6 @@ class BookmarksController < ApplicationController
   def create(photo, collection)
     @bookmark = Bookmark.new(photo_id: photo, collection_id: collection)
     @bookmark.save!
-    respond_to do |format|
-      format.html
-      format.turbo_stream
-    end
   end
   helper_method :create
 end
