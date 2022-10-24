@@ -1,4 +1,9 @@
-<h1>Create bookmark params</h1>
-<% photo = params[:photo_id] %>
-<% collection = params[:collection_id] %>
-<% create(photo, collection) %>
+<%= turbo_frame_tag "add_photo" do %>
+  <span>Photo added to collection</span>
+  <% photo = params[:photo_id] %>
+  <% collection = params[:collection_id] %>
+  <% create(photo, collection) %>
+  <%= turbo_stream.update "show_collection_edit" do %>
+    <%= render "collections/editshow", collection: @collection %>
+  <% end %>
+<% end %>

@@ -19,7 +19,6 @@ class CollectionsController < ApplicationController
         @bookmark = Bookmark.new(photo_id: photo.to_i, collection: @collection)
         @bookmark.save!
       end
-      flash[:notice] = "Album saved."
       redirect_to collection_path(@collection)
     else
       render :new
