@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :collections do
     resources :bookmarks, only: [:new, :create]
   end
-  resources :bookmarks, only: [:destroy]
+  resources :bookmarks, only: [:destroy, :new, :create]
   resources :contacts, only: [:new, :create ]
   get '/contacts', to: 'contacts#new', as: 'contact'
   get 'contacts/sent'

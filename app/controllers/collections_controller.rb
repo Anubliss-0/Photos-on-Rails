@@ -19,7 +19,6 @@ class CollectionsController < ApplicationController
         @bookmark = Bookmark.new(photo_id: photo.to_i, collection: @collection)
         @bookmark.save!
       end
-      flash[:notice] = "Album saved."
       redirect_to collection_path(@collection)
     else
       render :new
@@ -33,6 +32,7 @@ class CollectionsController < ApplicationController
   end
 
   def edit
+    @photos = Photo.all
     @collection = Collection.find(params[:id])
     authorize @collection
     @cover = []

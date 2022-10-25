@@ -1,10 +1,30 @@
+<%= turbo_frame_tag "show_all_photos" do %>
 <h1>All photos</h1>
-<% @photos.each do |photo| %>
-<div>
-  <%= cl_image_tag photo.photo.key, height: 300, width: 400, crop: :fill %>
-  <%= photo.description %>
-  <%= photo.film %>
-  <%= photo.camera %>
-  <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
-  </div>
+  <% @photos.each do |photo| %>
+    <div>
+      <%= cl_image_tag photo.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= photo.description %>
+      <%= photo.film %>
+      <%= photo.camera %>
+      <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
+    </div>
+  <% end %>
+<% end %>
+
+<%# This conditional will only render this frame if the params contain a "format" from another page %>
+<% if params[:format] != nil %>
+  <%= turbo_frame_tag "collection_show_photos" do %>
+    <% @photos.each do |photo| %>
+      <div>
+        <%= cl_image_tag photo.photo.key, height: 100, width: 100, crop: :fill %>
+        <%= turbo_frame_tag "add_photo" do %>
+          <span>
+            <%= @collection_id = params[:format] %>
+            <%= @photo_id = photo.id %>
+            <%= link_to "Add to collection", new_bookmark_path(collection_id: @collection_id,  photo_id: @photo_id), method: :new %>
+          </span>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
