@@ -5,7 +5,7 @@ class BookmarksController < ApplicationController
     @bookmark.destroy
 
     respond_to do |format|
-      format.html { redirect_to quotes_path, notice: "Quote was successfully destroyed." }
+      format.html
       format.turbo_stream
     end
   end
@@ -13,6 +13,11 @@ class BookmarksController < ApplicationController
   def create(photo, collection)
     @bookmark = Bookmark.new(photo_id: photo, collection_id: collection)
     @bookmark.save!
+
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
   helper_method :create
 end
