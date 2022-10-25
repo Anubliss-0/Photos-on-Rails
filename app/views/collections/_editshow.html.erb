@@ -2,10 +2,10 @@
 <% if @collection == nil %>
   <% @collection = Collection.find(params[:collection_id]) %>
 <% end %>
-<% @collection.photos.each do |photo| %>
+<% @collection.photos.each_with_index do |photo, i| %>
     <%= photo.title %>
     <%= cl_image_tag photo.photo.key, height: 60, width: 60 %>
     <%= link_to "Edit", edit_photo_path(photo.id) %>
-    <%= link_to "Remove", bookmark_path(photo.bookmark_ids), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i], collection_id: @collection.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <% end %>
 <% end %>
