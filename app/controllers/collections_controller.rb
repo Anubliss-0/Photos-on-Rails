@@ -46,7 +46,6 @@ class CollectionsController < ApplicationController
     @collection = Collection.find(params[:collection_id])
     @collection.cover = params[:photo_id]
     @collection.save!
-    # raise
   end
 
   def update
