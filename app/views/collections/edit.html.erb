@@ -19,3 +19,4 @@
 <%= turbo_frame_tag "show_collection_edit" do %>
   <%= render "editshow", collection: @collection %>
 <% end %>
+<%= link_to "Delete Collection", collection_path(@collection), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@collection).destroy?  %>

@@ -9,3 +9,4 @@
   <%= f.association :collections, as: :check_boxes, wrapper: :horizontal_collection_inline %>
   <%= f.button :submit, "Create" %>
 <% end %>
+<%= link_to "Delete Photo", photo_path(@photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
