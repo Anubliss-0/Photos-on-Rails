@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   def destroy
+    @photos = Photo.all
     @bookmark = Bookmark.find(params[:id])
     @photo = @bookmark.photo
     @bookmark.destroy

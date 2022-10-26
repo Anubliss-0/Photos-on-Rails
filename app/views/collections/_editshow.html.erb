@@ -6,7 +6,10 @@
 <% @collection.bookmarks.each_with_index do |bookmark, i| %>
     <%= bookmark.photo.title %>
     <%= cl_image_tag bookmark.photo.photo.key, height: 60, width: 60 %>
-    <%= link_to "Edit", edit_photo_path(bookmark.photo.id) %>
-    <%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i], collection_id: @collection.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <ul>
+      <li><%= link_to "Edit", edit_photo_path(bookmark.photo.id) %></li>
+      <li><%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i], collection_id: @collection.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+      <li><%= link_to "Set as cover photo", collection_set_cover_path(collection_id: @collection.id, photo_id: bookmark.photo_id), method: :set_cover %></li>
+    </ul>
   <% end %>
 <% end %>
