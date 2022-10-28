@@ -1,5 +1,8 @@
 <%= turbo_stream_from "editshow" %>
 
+<h2>Cover photo</h2>
+<%= cl_image_tag @photos.find(id = @collection.cover).photo.key %>
+
 <h1>Edit Album Title or Description</h1>
 <%= simple_form_for @collection do |f| %>
   <%= f.input :name %>
