@@ -1,0 +1,6 @@
+.collections-grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px 30px;
+}
