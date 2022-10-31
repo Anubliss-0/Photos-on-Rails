@@ -43,9 +43,17 @@ class CollectionsController < ApplicationController
   end
 
   def set_cover
+    @photos = Photo.all
+    request.variant = :turbo_stream
     @collection = Collection.find(params[:collection_id])
     @collection.cover = params[:photo_id]
     @collection.save!
+
+
+     respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def update

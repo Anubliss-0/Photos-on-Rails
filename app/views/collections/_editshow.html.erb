@@ -9,7 +9,11 @@
     <ul>
       <li><%= link_to "Edit", edit_photo_path(bookmark.photo.id) %></li>
       <li><%= link_to "Remove", bookmark_path(@collection.bookmark_ids[i], collection_id: @collection.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-      <li><%= link_to "Set as cover photo", collection_set_cover_path(collection_id: @collection.id, photo_id: bookmark.photo_id), method: :set_cover %></li>
+      <% if bookmark.photo_id == @collection.cover %>
+        <li>Is set as cover photo</li>
+      <% else %>
+        <li><%= link_to "Set as cover photo", collection_set_cover_path(collection_id: @collection.id, photo_id: bookmark.photo_id), data: {turbo_stream: :set_cover} %></li>
+      <% end %>
     </ul>
   <% end %>
 <% end %>
