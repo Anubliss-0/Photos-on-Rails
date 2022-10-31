@@ -1,15 +1,17 @@
 <%= turbo_stream_from "editshow" %>
 
+<h2>Cover photo</h2>
+<%= cl_image_tag @photos.find(id = @collection.cover).photo.key %>
+
 <h1>Edit Album Title or Description</h1>
 <%= simple_form_for @collection do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :cover, collection: @cover %>
   <%= f.button :submit, "Update" %>
 <% end %>
 
-<%= turbo_frame_tag "collection_show_photos" do %>
-  <%= link_to "Add photo", photos_path(params[:id]), data: { turbo_frame: "show_photos" } %>
+<%= turbo_frame_tag "add_photo" do %>
+  <%= link_to "Add photo", photos_path(collection_id: params[:id]) %>
 <% end %>
 
 <%# Temp line break for readability while testing %>

@@ -1,1 +1,18 @@
-<% raise %>
+<%= turbo_frame_tag "add_photo" do %>
+    <% @photos = Photo.all %>
+    <% @collections = Collection.all %>
+    <% @photos.each do |photo| %>
+    <% @collection = {} %>
+      <div>
+        <%= cl_image_tag photo.photo.key, height: 100, width: 100, crop: :fill %>
+        <%= turbo_frame_tag "add_photo" do %>
+            <% @photo_id = photo.id %>
+            <% if @collections[params[:collection_id].to_i - 1].photos.ids.include?(photo.id) %>
+              <%= "In collection" %>
+            <% else %>
+              <%= link_to "Add to collection", new_bookmark_path(collection_id: params[:collection_id],  photo_id: photo.id), method: :new %>
+            <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>

@@ -2,6 +2,7 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.all
+    @photos = Photo.all
   end
 
   def new
@@ -35,10 +36,16 @@ class CollectionsController < ApplicationController
     @photos = Photo.all
     @collection = Collection.find(params[:id])
     authorize @collection
-    @cover = []
-    @collection.photos.each_with_index do |item, i|
-      @cover << ["#{item.title}", "#{i}"]
-    end
+    # @cover = []
+    # @collection.photos.each_with_index do |item, i|
+    #   @cover << ["#{item.title}", "#{i}"]
+    # end
+  end
+
+  def set_cover
+    @collection = Collection.find(params[:collection_id])
+    @collection.cover = params[:photo_id]
+    @collection.save!
   end
 
   def update

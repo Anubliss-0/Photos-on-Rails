@@ -2,7 +2,7 @@
 <% @collections.each do |collection| %>
   <%= link_to collection.name, collection_path(collection.id) %>
   <% if collection.cover != nil %>
-    <%= cl_image_tag collection.photos[collection.cover].photo.key, height: 100, width: 100 %>
+    <%= cl_image_tag @photos.find(id = collection.cover).photo.key, height: 100, width: 100 %>
   <% else %>
     <span>No cover image selected</span>
   <% end %>
