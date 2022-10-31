@@ -15,12 +15,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     authorize @collection
     if @collection.save!
-      params[:collection][:photo_ids].delete("")
-      params[:collection][:photo_ids].each do |photo|
-        @bookmark = Bookmark.new(photo_id: photo.to_i, collection: @collection)
-        @bookmark.save!
-      end
-      redirect_to collection_path(@collection)
+      redirect_to edit_collection_path(@collection)
     else
       render :new
     end
