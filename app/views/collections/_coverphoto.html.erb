@@ -1,0 +1,3 @@
+<% if @collection.cover != nil %>
+  <%= cl_image_tag @photos.find(id = @collection.cover).photo.key %>
+<% end %>
