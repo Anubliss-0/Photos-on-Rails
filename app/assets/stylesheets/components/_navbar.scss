@@ -10,7 +10,7 @@
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 3rem;
+  height: 3.25rem;
   font-family: "Unbounded";
   font-weight: lighter;
   .name span {
@@ -24,6 +24,15 @@
     a {
       margin: 0rem 0.5rem;
       font-size: 1.5rem;
+      color: black;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    a:hover {
+      color: rgb(58, 58, 58);
+    }
+    i {
+      font-size: 1.75rem;
     }
   }
 
