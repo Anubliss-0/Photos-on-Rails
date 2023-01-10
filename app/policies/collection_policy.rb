@@ -7,9 +7,7 @@ class CollectionPolicy < ApplicationPolicy
   end
 
   def create?
-    # current_user.admin == true
-    #for testing purposes setting this to true
-    false
+    user.id == 1
   end
 
   def show?

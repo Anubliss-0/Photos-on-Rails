@@ -7,7 +7,7 @@ class PhotoPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.id == 1
   end
 
   def show?
@@ -15,10 +15,10 @@ class PhotoPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
+    record.user == user
   end
 
   def update?
-    true
+    record.user == user
   end
 end
