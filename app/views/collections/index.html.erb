@@ -1,9 +1,16 @@
 <h1>All collections</h1>
-<% @collections.each do |collection| %>
-  <%= link_to collection.name, collection_path(collection.id) %>
-  <% if collection.cover != nil %>
-    <%= cl_image_tag @photos.find(id = collection.cover).photo.key, height: 100, width: 100 %>
-  <% else %>
-    <span>No cover image selected</span>
+<div class="collections-container">
+  <% @collections.each do |collection| %>
+    <div class="collection-card">
+      <% if collection.cover != nil %>
+        <%= cl_image_tag @photos.find(id = collection.cover).photo.key %>
+      <% else %>
+        <span>No cover image selected</span>
+      <% end %>
+      <div class="collection-card-text">
+        <%= link_to collection.name, collection_path(collection.id) %>
+        <%= collection.description %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

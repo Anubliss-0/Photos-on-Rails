@@ -1,0 +1,35 @@
+.collections-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.collection-card-text{
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-top: 1rem;
+
+  a{
+    margin-bottom: 1rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: black;
+  }
+}
+
+.collection-card {
+  height: 13rem;
+  width: 23rem;
+  margin: 10px 10px 10px 10px;
+  display: flex;
+  background: white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
+  img {
+    object-fit: cover;
+  }
+
+}
