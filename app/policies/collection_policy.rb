@@ -7,9 +7,7 @@ class CollectionPolicy < ApplicationPolicy
   end
 
   def create?
-    # current_user.admin == true
-    #for testing purposes setting this to true
-    true
+    user.id == 1
   end
 
   def show?
@@ -17,10 +15,10 @@ class CollectionPolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    record.user == user
   end
 
   def destroy?
-    true
+    record.user == user
   end
 end
