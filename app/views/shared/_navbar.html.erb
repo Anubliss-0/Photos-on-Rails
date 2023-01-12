@@ -4,11 +4,12 @@
       <span>Photos on Rails</span>
     </div>
     <div class="navlinks-desktop">
-      <%= link_to "All photos", photos_path %>
+
+      <%= link_to "Photos", photos_path %>
       <%= link_to "Collections", collections_path %>
       <%= link_to "Contact", new_contact_path %>
       <%= link_to "About", "" %>
-      <a href="instagram.com">
+      <a href="www.instagram.com">
         <i class="fa-brands fa-instagram fa-3x"></i>
       </a>
       <% if user_signed_in? %>
