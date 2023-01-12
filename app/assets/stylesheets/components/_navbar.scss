@@ -10,7 +10,7 @@
   position: fixed;
   z-index: 1;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   font-family: "Unbounded";
   font-weight: lighter;
   .name span {
@@ -24,6 +24,17 @@
     a {
       margin: 0rem 0.5rem;
       font-size: 1.5rem;
+      text-decoration: none;
+      color:rgb(0, 0, 0);
+      transition: all .5s ease;
+    }
+    a:hover {
+      color:rgb(123, 123, 123);
+      text-decoration: underline;
+    }
+
+    i {
+      font-size: 3rem;
     }
   }
 
