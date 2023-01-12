@@ -4,6 +4,7 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.all
+    @photos = Photo.all
   end
 
   def new
@@ -16,12 +17,7 @@ class CollectionsController < ApplicationController
     @collection = Collection.new(collection_params)
     authorize @collection
     if @collection.save!
-      params[:collection][:photo_ids].delete("")
-      params[:collection][:photo_ids].each do |photo|
-        @bookmark = Bookmark.new(photo_id: photo.to_i, collection: @collection)
-        @bookmark.save!
-      end
-      redirect_to collection_path(@collection)
+      redirect_to edit_collection_path(@collection)
     else
       render :new
     end
@@ -37,9 +33,23 @@ class CollectionsController < ApplicationController
     @photos = Photo.all
     @collection = Collection.find(params[:id])
     authorize @collection
-    @cover = []
-    @collection.photos.each_with_index do |item, i|
-      @cover << ["#{item.title}", "#{i}"]
+    # @cover = []
+    # @collection.photos.each_with_index do |item, i|
+    #   @cover << ["#{item.title}", "#{i}"]
+    # end
+  end
+
+  def set_cover
+    @photos = Photo.all
+    request.variant = :turbo_stream
+    @collection = Collection.find(params[:collection_id])
+    @collection.cover = params[:photo_id]
+    @collection.save!
+
+
+     respond_to do |format|
+      format.html
+      format.turbo_stream
     end
   end
 

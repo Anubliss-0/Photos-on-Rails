@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :photos
   resources :collections do
+    get 'set_cover'
     resources :bookmarks, only: [:new, :create]
   end
   resources :bookmarks, only: [:destroy, :new, :create]

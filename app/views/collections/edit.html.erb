@@ -1,15 +1,18 @@
 <%= turbo_stream_from "editshow" %>
 
+<%= turbo_frame_tag "coverphoto" do %>
+  <%= render "coverphoto" %>
+<% end %>
+
 <h1>Edit Album Title or Description</h1>
 <%= simple_form_for @collection do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :cover, collection: @cover %>
   <%= f.button :submit, "Update" %>
 <% end %>
 
-<%= turbo_frame_tag "collection_show_photos" do %>
-  <%= link_to "Add photo", photos_path(params[:id]), data: { turbo_frame: "show_photos" } %>
+<%= turbo_frame_tag "add_photo" do %>
+  <%= link_to "Add photo", photos_path(collection_id: params[:id]) %>
 <% end %>
 
 <%# Temp line break for readability while testing %>
@@ -19,3 +22,4 @@
 <%= turbo_frame_tag "show_collection_edit" do %>
   <%= render "editshow", collection: @collection %>
 <% end %>
+<%= link_to "Delete Collection", collection_path(@collection), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@collection).destroy?  %>

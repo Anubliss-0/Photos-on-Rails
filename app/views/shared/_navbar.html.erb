@@ -4,6 +4,7 @@
       <span>Photos on Rails</span>
     </div>
     <div class="navlinks-desktop">
+
       <%= link_to "Photos", photos_path %>
       <%= link_to "Collections", collections_path %>
       <%= link_to "Contact", new_contact_path %>
@@ -20,9 +21,9 @@
   </div>
 
   <div class="navlinks-mobile" data-navbar-target="mobileLinks" style="left:100vw;">
-    <%= link_to "All photos" %>
+    <%= link_to "All photos", photos_path %>
     <%= link_to "Collections", collections_path %>
-    <%= link_to "Contact", "" %>
+    <%= link_to "Contact", new_contact_path %>
     <%= link_to "About", "" %>
     <a href=" instagram.com ">
       <i class=" fa-brands fa-instagram fa-3x "></i>

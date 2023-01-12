@@ -1,0 +1,7 @@
+<%= turbo_stream.update "coverphoto" do %>
+  <%= render "coverphoto", collection: params[:collection_id] %>
+<% end %>
+
+<%= turbo_stream.update "show_collection_edit" do %>
+  <%= render "collections/editshow", collection: params[:collection_id] %>
+<% end %>
