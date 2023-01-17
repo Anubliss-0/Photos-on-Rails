@@ -10,11 +10,24 @@
   margin-left: 1rem;
   margin-top: 1rem;
 
-  a{
+  .collection-card-link{
     margin-bottom: 1rem;
     font-style: italic;
     font-size: 1.5rem;
     color: black;
+  }
+
+  #seemore{
+    font-size: 1rem;
+    color: black;
+  }
+
+  a{
+    color: black;
+  }
+
+  p{
+    margin-bottom: 0;
   }
 }
 
@@ -27,9 +40,10 @@
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  margin: 10px auto;
+  transition: all .5s ease;
+}
 
-  img {
-    object-fit: cover;
-  }
-
+.collection-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.509);
 }
