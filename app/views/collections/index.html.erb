@@ -1,9 +1,25 @@
-<h1>All collections</h1>
-<% @collections.each do |collection| %>
-  <%= link_to collection.name, collection_path(collection.id) %>
-  <% if collection.cover != nil %>
-    <%= cl_image_tag @photos.find(id = collection.cover).photo.key, height: 100, width: 100 %>
-  <% else %>
-    <span>No cover image selected</span>
+<h1 class="title">My Collections</h1>
+<div class="collections-container">
+  <% @collections.each do |collection| %>
+    <div class="collection-card">
+      <% if collection.cover != nil %>
+        <%= cl_image_tag @photos.find(id = collection.cover).photo.key, width: 215, height:188, crop: :fill%>
+      <% else %>
+        <span>No cover image selected</span>
+      <% end %>
+      <div class="collection-card-text">
+        <div class="collection-card-link">
+          <%= link_to collection.name, collection_path(collection.id) %>
+        </div>
+        <% if collection.description.length > 30 %>
+          <p><%= collection.description[0..30] %>...<p>
+          <div id="seemore">
+            <%= link_to "See more", collection_path(collection.id) %>
+          </div>
+        <% else %>
+          <%= collection.description %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>
