@@ -1,5 +1,8 @@
 .carousel_photo_container {
   width: 80vw;
-  height: 75 vh;
   margin: 0 auto;
+
+  img {
+    height: 75vh !important;
+  }
 }

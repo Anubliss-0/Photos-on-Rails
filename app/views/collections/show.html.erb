@@ -9,9 +9,9 @@
 
     <div class="carousel-inner">
       <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-        <div class="carousel-item <%= index == 0 ? "active" : "" %>">
+        <div class="carousel-item h-75 <%= index == 0 ? "active" : "" %>">
             <% photo = Photo.find(bookmark.photo_id) %>
-            <%= cl_image_tag photo.photo.key, crop: :fill, class:"d-block w-100 carousel-photo"%>
+            <%= cl_image_tag photo.photo.key, class:"d-block w-100 carousel-photo"%>
         </div>
       <% end %>
     </div>
