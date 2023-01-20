@@ -1,0 +1,10 @@
+.carousel_photo_container {
+  width: 80vw;
+  margin: 0 auto;
+
+  img {
+    height: 75vh !important;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+}
