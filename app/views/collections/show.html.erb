@@ -25,7 +25,7 @@
   <h2><%= @collection.description %></h2>
 
   <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-    <div class="photo-info<%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" data-photo-info-target="photoinfo">
+    <div class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" data-photo-info-target="photoinfo">
       <% photo = Photo.find(bookmark.photo_id) %>
       <%= photo.title %>
       <%= photo.description %>
