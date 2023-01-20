@@ -1,39 +1,39 @@
+<div data-controller="photoinfo">
+  <div class="carousel_photo_container">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 
-<div class="carousel_photo_container">
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <% @collection.bookmarks.each_with_index do |bookmark, index| %>
+          <div class="carousel-item h-75 <%= index == 0 ? "active" : "" %>">
+              <% photo = Photo.find(bookmark.photo_id) %>
+              <%= cl_image_tag photo.photo.key, crop: :fill, class:"d-block carousel-photo"%>
+          </div>
+        <% end %>
+      </div>
 
-    <div class="carousel-inner">
-      <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-        <div class="carousel-item h-75 <%= index == 0 ? "active" : "" %>">
-            <% photo = Photo.find(bookmark.photo_id) %>
-            <%= cl_image_tag photo.photo.key, crop: :fill, class:"d-block carousel-photo"%>
-        </div>
-      <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" data-action="click->photoinfo#nextInfo">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
+  <h1><%=@collection.name %></h1>
+  <h2><%= @collection.description %></h2>
+
+  <% @collection.bookmarks.each_with_index do |bookmark, index| %>
+    <div class="photo-info<%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" data-photo-info-target="photoinfo">
+      <% photo = Photo.find(bookmark.photo_id) %>
+      <%= photo.title %>
+      <%= photo.description %>
+      <%= photo.date %>
+      <%= photo.film %>
+    </div>
+  <% end %>
 </div>
-<h1><%=@collection.name %></h1>
-<h2><%= @collection.description %></h2>
-
-<% @collection.bookmarks.each_with_index do |bookmark, index| %>
-  <div class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-unactive"%>">
-    <% photo = Photo.find(bookmark.photo_id) %>
-    <%= photo.title %>
-    <%= photo.description %>
-    <%= photo.date %>
-    <%= photo.film %>
-  </div>
-<% end %>
-
 <% if policy(@collection).update? %>
   <%= link_to "edit collection", edit_collection_path(@collection) %>
   <%= link_to "Delete collection", @collection, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
