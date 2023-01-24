@@ -8,8 +8,11 @@ export default class extends Controller {
   }
 
   nextInfo() {
-    if(this.photoinfoTarget.classList.contains('photo-info-active') === true) {
-      this.photoinfoTarget.classList.remove('photo-info-active')
-    }
+    console.log('test')
+    this.photoinfoTarget.classList.add('red')
+    // console.log("test")
+    // if(this.photoinfoTarget.classList.contains('photo-info-active') === true) {
+    //   this.photoinfoTarget.classList.remove('photo-info-active')
+    // }
   }
 }

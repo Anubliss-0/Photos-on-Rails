@@ -11,21 +11,21 @@
         <% end %>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" data-action="click->photoinfo#nextInfo">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" data-action="click->photoinfo#nextInfo">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
   </div>
-  <h1><%=@collection.name %></h1>
+  <h1 data-photoinfo-target="photoinfo"><%=@collection.name %></h1>
   <h2><%= @collection.description %></h2>
 
   <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-    <div class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" data-photo-info-target="photoinfo">
+    <div  class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
       <% photo = Photo.find(bookmark.photo_id) %>
       <%= photo.title %>
       <%= photo.description %>
