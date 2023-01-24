@@ -21,11 +21,11 @@
       </button>
     </div>
   </div>
-  <h1 data-photoinfo-target="photoinfo"><%=@collection.name %></h1>
+  <h1><%=@collection.name %></h1>
   <h2><%= @collection.description %></h2>
 
   <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-    <div  class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
+    <div data-photoinfo-target="photoinfo" class="photo-info <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
       <% photo = Photo.find(bookmark.photo_id) %>
       <%= photo.title %>
       <%= photo.description %>
