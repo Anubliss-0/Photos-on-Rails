@@ -19,9 +19,19 @@ export default class extends Controller {
     count ++
     this.photoinfoTargets[ogCount].classList.add('photo-info-inactive');
     this.photoinfoTargets[count].classList.remove('photo-info-inactive')
-    console.log(ogCount)
     }
-    console.log(count)
-    console.log(this.photoinfoTargets)
+  }
+
+  prevInfo() {
+    // if (count === this.photoinfoTargets.length-1 ){
+    //   this.photoinfoTargets[count].classList.add('photo-info-inactive')
+    //   count = 0
+    //   this.photoinfoTargets[count].classList.remove('photo-info-inactive');
+    // } else {
+    let ogCount = count
+    count --
+    this.photoinfoTargets[ogCount].classList.add('photo-info-inactive');
+    this.photoinfoTargets[count].classList.remove('photo-info-inactive')
+    // }
   }
 }
