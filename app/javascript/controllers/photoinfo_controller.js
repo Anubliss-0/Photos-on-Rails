@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 
+let count = 0
 // Connects to data-controller="photoinfo"
 export default class extends Controller {
   static targets = ["photoinfo"]
@@ -8,22 +9,19 @@ export default class extends Controller {
     console.log("you did it you sexy bitch")
   }
 
-
   nextInfo(event) {
-    let indexes = []
-    // let increment = count + 1;
-    this.photoinfoTargets.forEach((element, index) => { if(element.classList.contains('photo-info-active') === true) {
-      indexes.push(index)
-    } })
-    const toInt = indexes.reduce((accum, digit) => (accum * 10) + digit, 0);
-    const nextIndex = toInt + 1
-    // let number = this.photoinfoTargets.findIndex(this.photoinfoTarget.classList.contains('photo-info-active'))
-    if(this.photoinfoTarget.classList.contains('photo-info-active') === true) {
-      this.photoinfoTarget.classList.remove('photo-info-active')
-      this.photoinfoTarget.classList.add('photo-info-inactive')
-    }
-    this.photoinfoTargets[nextIndex].classList.remove('photo-info-inactive')
-    this.photoinfoTargets[nextIndex].classList.add('photo-info-active')
-    console.log(nextIndex)
+    let OgCount = count
+    count ++
+    this.photoinfoTargets.forEach((element) => {
+      if(element.classList.contains('photo-info-active') === true) {
+        element.classList.remove('photo-info-active');
+      }
+    });
+    this.photoinfoTargets[OgCount].classList.add('photo-info-inactive');
+    this.photoinfoTargets[count].classList.remove('photo-info-inactive')
+    this.photoinfoTargets[count].classList.add('photo-info-active')
+    console.log(OgCount)
+    console.log(count)
+    console.log(this.photoinfoTargets)
   }
 }
