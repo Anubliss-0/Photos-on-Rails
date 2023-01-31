@@ -1,4 +1,4 @@
-<div data-controller="photoinfo">
+<div data-controller="photoinfo" class="collections-show-card">
   <div class="carousel_photo_container">
     <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
 
@@ -21,20 +21,22 @@
       </button>
     </div>
   </div>
-  <h1><%=@collection.name %></h1>
-  <h2><%= @collection.description %></h2>
+  <div>
+    <h1><%=@collection.name %></h1>
+    <h2><%= @collection.description %></h2>
 
-  <% @collection.bookmarks.each_with_index do |bookmark, index| %>
-    <div data-photoinfo-target="photoinfo" class="photo-info  <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
-      <% photo = Photo.find(bookmark.photo_id) %>
-      <div class="photo<%=index%>">
-        <%= photo.title %>
-        <%= photo.description %>
-        <%= photo.date %>
-        <%= photo.film %>
+    <% @collection.bookmarks.each_with_index do |bookmark, index| %>
+      <div data-photoinfo-target="photoinfo" class="photo-info  <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
+        <% photo = Photo.find(bookmark.photo_id) %>
+        <div class="photo<%=index%>">
+          <%= photo.title %>
+          <%= photo.description %>
+          <%= photo.date %>
+          <%= photo.film %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 <% if policy(@collection).update? %>
   <%= link_to "edit collection", edit_collection_path(@collection) %>
