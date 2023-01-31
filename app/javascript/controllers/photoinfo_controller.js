@@ -11,18 +11,14 @@ export default class extends Controller {
 
   nextInfo() {
     if (count === this.photoinfoTargets.length-1 ){
-      this.photoinfoTargets[count].classList.remove('photo-info-active')
       this.photoinfoTargets[count].classList.add('photo-info-inactive')
       count = 0
-      this.photoinfoTargets[count].classList.add('photo-info-active');
       this.photoinfoTargets[count].classList.remove('photo-info-inactive');
     } else {
     let ogCount = count
     count ++
-    this.photoinfoTargets[ogCount].classList.remove('photo-info-active');
     this.photoinfoTargets[ogCount].classList.add('photo-info-inactive');
     this.photoinfoTargets[count].classList.remove('photo-info-inactive')
-    this.photoinfoTargets[count].classList.add('photo-info-active')
     console.log(ogCount)
     }
     console.log(count)
