@@ -4,22 +4,37 @@
 }
 
 .photo-info{
-
+  padding: 0 10px;
 }
+.photo-info-card{
+margin: 0 10px;
+font-family: 'Unbounded';
+border-radius: 10px;
+font-weight: lighter;
+border: 2px solid rgb(77, 77, 77);
+background-color: white;
+width: 20vw;
 
-.photo-info-active {
-
+h1{
+  margin: 10px auto 5px auto;
+}
+h2 {
+  margin: 0 auto 10px auto;
+  font-family: 'Unbounded';
+  font-weight: lighter;
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(72, 72, 72);
+}
+h3 {
+  font-family: 'Unbounded';
+  font-weight: lighter;
+  font-style: italic;
+  margin: 20px auto 10px auto;
+  text-align: center;
+}
 }
 
 .photo-info-inactive {
   display: none;
-}
-
-.red {
-  color: red;
-}
-
-.carousel-items {
-  display: flex;
-  flex-direction: row;
 }
