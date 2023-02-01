@@ -1,14 +1,21 @@
 <%= turbo_frame_tag "show_all_photos" do %>
 <h1>All photos</h1>
   <% @photos.each do |photo| %>
-    <div>
-      <%= cl_image_tag photo.photo.key, height: 300, width: 400, crop: :fill %>
-      <%= photo.description %>
-      <%= photo.film %>
-      <%= photo.camera %>
-      <% if policy(photo).edit? %>
-        <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
-      <% end %>
+    <div class="photo-index-card">
+      <%= cl_image_tag photo.photo.key%>
+       <div class="photo-index-card-text">
+        <h1><%= photo.title %></h1>
+        <div>
+          <p><%= photo.description %></p>
+          <div class="photo-index-card-film">
+            <p><%= photo.film %></p>
+            <p><%= photo.camera %></p>
+          </div>
+        </div>
+        <p><% if policy(photo).edit? %>
+          <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
