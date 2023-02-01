@@ -21,7 +21,7 @@
       </button>
     </div>
   </div>
-  <div>
+  <div class='photo-info-card'>
     <h1><%=@collection.name %></h1>
     <h2><%= @collection.description %></h2>
 
@@ -29,10 +29,10 @@
       <div data-photoinfo-target="photoinfo" class="photo-info  <%= index == 0 ? "photo-info-active" : "photo-info-inactive"%>" >
         <% photo = Photo.find(bookmark.photo_id) %>
         <div class="photo<%=index%>">
-          <%= photo.title %>
-          <%= photo.description %>
-          <%= photo.date %>
-          <%= photo.film %>
+          <h3><%= photo.title %></h3>
+          <p><%= photo.description %></p>
+          <p>Taken on <%= photo.date.strftime('%B %d, %Y') %>.</p>
+          <p>Film: <%= photo.film %></p>
         </div>
       </div>
     <% end %>
