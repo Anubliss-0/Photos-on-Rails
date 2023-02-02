@@ -1,0 +1,55 @@
+.photo-index-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
+}
+
+.photo-index-card {
+  margin: 20px 30px 0 30px;
+  font-family: 'Unbounded';
+  border-radius: 10px;
+  font-weight: lighter;
+  border: 2px solid rgb(77, 77, 77);
+  background-color: white;
+  width: 35vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  img {
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+    object-fit: cover;
+  }
+  .small-title {
+    font-size: 1.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    padding: 2rem 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    color: black;
+  }
+}
+
+.photo-index-card-film {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  p {
+    font-size: .75rem;
+  }
+}
+
+.photo-index-card-text {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+}
