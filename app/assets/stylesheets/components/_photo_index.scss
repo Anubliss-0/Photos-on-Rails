@@ -17,6 +17,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: all .5s ease;
+
   img {
     border-radius: 5px;
     margin: 20px auto;
@@ -52,4 +54,8 @@
   display: flex;
   padding: 0 20px;
   align-items: center;
+}
+
+.photo-index-card:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.509);
 }
