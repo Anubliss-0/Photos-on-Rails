@@ -3,18 +3,20 @@
   <% @collections.each do |collection| %>
     <div class="collection-card">
       <% if collection.cover != nil %>
-        <%= cl_image_tag @photos.find(id = collection.cover).photo.key, width: 215, height:188, crop: :fill%>
+        <%= cl_image_tag @photos.find(id = collection.cover).photo.key %>
       <% else %>
         <span>No cover image selected</span>
       <% end %>
       <div class="collection-card-text">
-        <div class="collection-card-link">
-          <%= link_to collection.name, collection_path(collection.id) %>
+        <div class="collection-card-link <%= collection.name.include?(" ")? "small-title" : " " %>">
+          <h1><%= link_to collection.name, collection_path(collection.id) %></h1>
         </div>
         <% if collection.description.length > 30 %>
-          <p><%= collection.description[0..30] %>...<p>
-          <div id="seemore">
-            <%= link_to "See more", collection_path(collection.id) %>
+          <div>
+            <p><%= collection.description[0..30] %>...<p>
+            <div id="seemore">
+              <%= link_to "See more", collection_path(collection.id) %>
+            </div>
           </div>
         <% else %>
           <%= collection.description %>

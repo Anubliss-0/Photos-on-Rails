@@ -1,47 +1,90 @@
 .collections-container{
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  width: 100vw;
+  justify-content: center;
 }
 
-.collection-card-text{
+.collection-card-text {
   display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  margin-top: 1rem;
-
-  .collection-card-link{
-    margin-bottom: 1rem;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: black;
-  }
-
-  #seemore{
-    font-size: 1rem;
-    color: black;
-  }
-
-  a{
-    color: black;
-  }
-
-  p{
-    margin-bottom: 0;
-  }
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-evenly;
 }
+// .collection-card-text{
+//   display: flex;
+//   flex-direction: row;
+//   margin-left: 1rem;
+//   margin-top: 1rem;
+//   justify-content: space-evenly;
+
+//   .collection-card-link{
+//     margin-bottom: 1rem;
+//     font-style: italic;
+//     font-size: 1.5rem;
+//     color: black;
+//   }
+
+//   #seemore{
+//     font-size: 1rem;
+//     color: black;
+//   }
+
+//   a{
+//     color: black;
+//   }
+
+//   p{
+//     margin-bottom: 0;
+//   }
+// }
 
 .collection-card {
-  height: 13rem;
-  width: 23rem;
-  margin: 10px 10px 10px 10px;
+  margin: 20px 30px 0 30px;
+  font-family: 'Unbounded';
+  border-radius: 10px;
+  font-weight: lighter;
+  border: 2px solid rgb(77, 77, 77);
+  background-color: white;
+  width: 35vw;
+  height: 50vh;
   display: flex;
-  background: white;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.1);
-  margin: 10px auto;
+  flex-direction: column;
   transition: all .5s ease;
+
+  img {
+    border-radius: 5px;
+    margin: 20px auto;
+    width: 90%;
+    box-shadow: 10px 10px 28px -10px rgba(0,0,0,0.75);
+    object-fit: cover;
+  }
+  .small-title {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+    padding: 2rem 1rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  a {
+    color: black;
+  }
+  // height: 13rem;
+  // width: 23rem;
+  // margin: 10px 10px 10px 10px;
+  // display: flex;
+  // flex-direction: column;
+  // background: white;
+  // border: 2px solid rgb(77, 77, 77);
+  // border-radius: 10px;
+  // padding: 10px;
+  // border-radius: 4px;
+  // box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  // margin: 10px auto;
+  // transition: all .5s ease;
 }
 
 .collection-card:hover {
