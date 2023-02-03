@@ -17,9 +17,9 @@
               <p><%= photo.camera %></p>
             </div>
           </div>
-          <p><% if policy(photo).edit? %>
-            <%= link_to "Edit information", edit_photo_path(photo[:id]) %>
-          <% end %>
+          <%# <p><% if policy(photo).edit? %>
+            <%# <%= link_to "Edit information", edit_photo_path(photo[:id]) %> %>
+          <%# <% end %>
         </div>
       </div>
     <% end %>
@@ -28,10 +28,10 @@
 
 
 <%# This conditional will only render this frame if the params contain a "format" from another page %>
-<% if params[:format] != nil %>
-<% end %>
+<%# <% if params[:format] != nil %>
+<%# <% end %>
 
-  <%= turbo_frame_tag "add_photo" do %>
-    <%= render "addphoto"%>
-  <% end %>
+  <%# <%= turbo_frame_tag "add_photo" do %>
+    <%# <%= render "addphoto"%>
+  <%# <% end %>
 <%# display already added %>
