@@ -1,0 +1,42 @@
+.photo-show-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 80vh;
+  width: 100vw;
+  padding: 0 20px;
+}
+
+.photo-show-card {
+  margin: 0 auto;
+  font-family: 'Unbounded';
+  border-radius: 10px;
+  font-weight: lighter;
+  border: 2px solid rgb(77, 77, 77);
+  background-color: white;
+  width: 25vw;
+  h1{
+    margin: 10px auto 5px auto;
+  }
+  h2 {
+    margin: 0 auto 10px auto;
+    font-family: 'Unbounded';
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(72, 72, 72);
+  }
+  h3 {
+    font-family: 'Unbounded';
+    font-weight: lighter;
+    font-style: italic;
+    margin: 20px auto 10px auto;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  img{
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    }
+}
