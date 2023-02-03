@@ -1,13 +1,14 @@
 .photo-show-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 80vh;
   width: 100vw;
+  padding: 0 20px;
 }
 
 .photo-show-card {
-  margin: 0 30px 0 30px;
+  margin: 0 auto;
   font-family: 'Unbounded';
   border-radius: 10px;
   font-weight: lighter;
@@ -37,5 +38,5 @@
     width: 75%;
     height: 100%;
     object-fit: cover;
-  }
+    }
 }

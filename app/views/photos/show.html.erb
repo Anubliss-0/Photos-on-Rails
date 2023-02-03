@@ -6,6 +6,6 @@
     <p><%= @photo.film %></p>
     <p><%= @photo.camera %></p>
     <%= link_to "Delete Photo", photo_path(@photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
-    <%= link_to "Edit information", edit_photo_path(@photo) %>
+    <%= link_to "Edit information", edit_photo_path(@photo) if policy(@photo).update? %>
   </div>
 </div>
