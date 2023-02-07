@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&family=PT+Serif&family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Seaweed+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
 
   <body>
@@ -19,5 +20,10 @@
   <%= render "shared/flashes" %>
 
   <%= yield %>
+
+   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
