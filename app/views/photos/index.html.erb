@@ -2,7 +2,7 @@
 <h1>All photos</h1>
   <div class="photo-index-container">
     <% @photos.each do |photo| %>
-      <div class="photo-index-card">
+      <div class="photo-index-card" data-aos=<%= @photos.find_index(photo).even? || @photos.find_index(photo) === 0 ? "fade-right" : "fade-left" %>>
         <%= cl_image_tag photo.photo.key%>
         <div class="photo-index-card-text">
           <h1 class= <%= photo.title.include?(" ")? "small-title" : " " %>><%= link_to photo.title, photo_path(photo) %></h1>
