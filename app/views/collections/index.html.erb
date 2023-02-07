@@ -1,7 +1,7 @@
 <h1 class="title">My Collections</h1>
 <div class="collections-container">
   <% @collections.each do |collection| %>
-    <div class="collection-card" data-aos=<%= @collections.find_index(collection).even? || @collections.find_index(collection) === 0 ? "fade-right" : "fade-left" %>>
+    <div class="collection-card" data-aos=<%= @collections.find_index(collection).even? || @collections.find_index(collection) === 0 ? "fade-right" : "fade-left" %> data-aos-duration="1000">
       <% if collection.cover != nil %>
         <%= cl_image_tag @photos.find(id = collection.cover).photo.key %>
       <% else %>

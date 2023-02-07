@@ -1,6 +1,7 @@
-    <h1>Contact Railscoder</h1>
-    <p>I'd love to hear from you. Send me a message below.</p>
-    <%= simple_form_for @contact do |f| %>
+ <div class="form-container">
+  <h1>Contact</h1>
+  <p>I'd love to hear from you. Send me a message below for booking requests and inquiries.</p>
+  <%= simple_form_for @contact do |f| %>
     <% if @contact.errors.any? %>
 
             <div><%= pluralize(@contact.errors.count, "error") %> prohibited this page from being saved:</div>
@@ -11,8 +12,11 @@
             </ul>
 
     <% end %>
- <%= f.input :name %>
-<%= f.input :email %>
-<%= f.input :message %>
-  <%= f.button :submit, "Send" %>
-    <% end %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :message %>
+    <div class="button-container">
+      <%= f.button :submit, "Send", class: "button" %>
+    </div>
+  <% end %>
+</div>
