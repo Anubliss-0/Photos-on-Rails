@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cover_photo.photo.key%>')">
+</div>
+<h1 class="title">My Collections</h1>
+<div class="collections-container">
+  <% @collections.each do |collection| %>
+    <div class="collection-card" data-aos=<%= @collections.find_index(collection).even? || @collections.find_index(collection) === 0 ? "fade-right" : "fade-left" %> data-aos-duration="1000">
+      <% if collection.cover != nil %>
+        <%= cl_image_tag @photos.find(id = collection.cover).photo.key %>
+      <% else %>
+        <span>No cover image selected</span>
+      <% end %>
+      <div class="collection-card-text">
+        <div class="collection-card-link <%= collection.name.include?(" ")? "small-title" : " " %>">
+          <h1><%= link_to collection.name, collection_path(collection.id) %></h1>
+        </div>
+        <% if collection.description.length > 30 %>
+          <div>
+            <p><%= collection.description[0..30] %>...<p>
+            <div id="seemore">
+              <%= link_to "See more", collection_path(collection.id) %>
+            </div>
+          </div>
+        <% else %>
+          <%= collection.description %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
