@@ -19,8 +19,7 @@
   "author": "Clayton Flaherty <claytonflaherty92@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@prettier/plugin-ruby": "^3.2.2",
-    "prettier": "^2.7.1",
-    "prettier-plugin-erb": "^0.4.0"
+    "css-loader": "^6.7.3",
+    "style-loader": "^3.3.1"
   }
 }
