@@ -1,5 +1,5 @@
-<div class="nav-container" data-controller="navbar">
-  <div class="navbar">
+<div class="nav-container" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar" >
+  <div class="navbar <%= current_page?(root_path)  ? "navbar-home" : 'navbar-normal'%>" data-navbar-target="navbar">
     <div class="name">
       <span>Photos on Rails</span>
     </div>
@@ -20,14 +20,14 @@
     <button id="hamburger" data-action="click->navbar#menu"><i class="fa-solid fa-bars fa-3x""></i></button>
   </div>
 
-  <div class="navlinks-mobile" data-navbar-target="mobileLinks" style="left:100vw;">
+  <%# <div class="navlinks-mobile" data-navbar-target="mobileLinks" style="left:100vw;">
     <%= link_to "All photos", photos_path %>
-    <%= link_to "Collections", collections_path %>
-    <%= link_to "Contact", new_contact_path %>
-    <%= link_to "About", "" %>
-    <a href=" instagram.com ">
-      <i class=" fa-brands fa-instagram fa-3x "></i>
-    </a>
-  </div>
+    <%# <%= link_to "Collections", collections_path %>
+    <%# <%= link_to "Contact", new_contact_path %>
+    <%# <%= link_to "About", "" %>
+    <%# <a href=" instagram.com "> %>
+      <%# <i class=" fa-brands fa-instagram fa-3x "></i> %>
+    <%# </a> %>
+  <%# </div> %>
 
 </div>
