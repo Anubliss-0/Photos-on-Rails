@@ -1,5 +1,9 @@
 <div data-controller='banner'>
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cover_photo.photo.key%>')">
+    <div class='banner-txt'>
+      <h1>Jill Smith</h1>
+      <h2>Award Winning Photography</h2>
+    </div>
     <a href="" data-action="click->banner#autoScroll"><p class="banner-button">Enter</p></a>
   </div>
   <div id="collection-title"  data-banner-target="collections" >
