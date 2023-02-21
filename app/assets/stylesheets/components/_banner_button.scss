@@ -11,6 +11,10 @@
     font-family: 'Unbounded';
     height: 90px;
     width: 250px;
+    opacity: .5;
+}
+.banner-button:hover {
+  opacity: .75;
 }
 a {
   text-decoration: none;
