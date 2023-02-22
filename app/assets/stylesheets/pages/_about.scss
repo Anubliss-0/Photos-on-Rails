@@ -1,0 +1,20 @@
+.about-photo{
+  width: 45%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.about-text {
+  padding: 0 20px;
+  p{
+    font-size: 1.25rem;
+  }
+  li {
+    font-size: 1.25rem;
+  }
+}
+
+.about-container{
+  display:flex;
+  flex-direction: row;
+}
