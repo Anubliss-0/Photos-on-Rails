@@ -1,6 +1,8 @@
-<h1>Create an Album</h1>
-<%= simple_form_for @collection do |f| %>
-  <%= f.input :name %>
-    <%= f.input :description %>
-  <%= f.button :submit, "Create" %>
-<% end %>
+<div class="form-container">
+  <h1>Create an Album</h1>
+  <%= simple_form_for @collection do |f| %>
+    <%= f.input :name %>
+      <%= f.input :description %>
+    <%= f.button :submit, "Create" %>
+  <% end %>
+</div>
