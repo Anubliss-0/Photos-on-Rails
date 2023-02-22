@@ -1,12 +1,16 @@
-<%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
-<%= simple_form_for @photo do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :film %>
-  <%= f.input :camera %>
-  <%= f.input :date %>
-<h2>Would you like to add this photo to any albums?</h2>
-  <%= f.association :collections, as: :check_boxes, wrapper: :horizontal_collection_inline %>
-  <%= f.button :submit, "Create" %>
-<% end %>
-<%= link_to "Delete Photo", photo_path(@photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
+<div class="text-center pb-3">
+  <%= cl_image_tag @photo.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
+<div class="form-container">
+  <%= simple_form_for @photo do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :film %>
+    <%= f.input :camera %>
+    <%= f.input :date %>
+  <h2>Would you like to add this photo to any albums?</h2>
+    <%= f.association :collections, as: :check_boxes, wrapper: :horizontal_collection_inline %>
+    <%= f.button :submit, "Create", class: "button" %>
+  <% end %>
+  <%= link_to "Delete Photo", photo_path(@photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
+</div>

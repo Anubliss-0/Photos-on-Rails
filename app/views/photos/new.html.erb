@@ -1,12 +1,14 @@
-<h1>Upload a Photo</h1>
-<%= simple_form_for @photo do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :film %>
-  <%= f.input :camera %>
-  <%= f.input :date %>
-  <%= f.input :photo, as: :file %>
-<h2>Would you like to add this photo to any albums?</h2>
-  <%= f.association :collections, as: :check_boxes, wrapper: :horizontal_collection_inline %>
-  <%= f.button :submit, "Create" %>
-<% end %>
+<div class="form-container">
+  <h2>Upload a Photo</h2>
+  <%= simple_form_for @photo do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :film %>
+    <%= f.input :camera %>
+    <%= f.input :date %>
+    <%= f.input :photo, as: :file %>
+  <h2>Would you like to add this photo to any albums?</h2>
+    <%= f.association :collections, as: :check_boxes, wrapper: :horizontal_collection_inline %>
+    <%= f.button :submit, "Create" %>
+  <% end %>
+</div>

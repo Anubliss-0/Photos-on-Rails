@@ -23,3 +23,14 @@ body {
 #collection-title{
   padding-top: 7rem;
 }
+
+html {
+a{
+  color: black
+}
+}
+
+.user-buttons-container {
+  display: flex;
+  flex-direction: column;
+}

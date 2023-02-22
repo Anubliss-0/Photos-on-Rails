@@ -25,6 +25,7 @@
     <% end %>
   </div>
 <% end %>
+<%= link_to "Add Photo", new_photo_path, class:"button user-buttons-container mt-5 w-25" if policy(@photos).create? %>
 
 
 <%# This conditional will only render this frame if the params contain a "format" from another page %>

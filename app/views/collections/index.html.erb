@@ -25,3 +25,4 @@
     </div>
   <% end %>
 </div>
+<%= link_to "Add Collection", new_collection_path, class:"button user-buttons-container mt-5 w-25" if policy(@collections).create? %>

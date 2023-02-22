@@ -1,11 +1,13 @@
 <div class="photo-show-container">
   <%= cl_image_tag @photo.photo.key %>
-  <div class="photo-show-card">
+  <div class="photo-show-card ms-3">
     <h1><%= @photo.title %></h1>
     <h3><%= @photo.description %></h3>
     <p><%= @photo.film %></p>
     <p><%= @photo.camera %></p>
-    <%= link_to "Delete Photo", photo_path(@photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
-    <%= link_to "Edit information", edit_photo_path(@photo) if policy(@photo).update? %>
+    <div class="user-buttons-container">
+      <%= link_to "Delete", photo_path(@photo), class:"button mb-5", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@photo).destroy?  %>
+      <%= link_to "Edit", edit_photo_path(@photo), class:"button" if policy(@photo).update? %>
+    </div>
   </div>
 </div>
