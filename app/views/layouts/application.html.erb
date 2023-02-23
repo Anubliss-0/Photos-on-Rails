@@ -16,13 +16,19 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
 
-  <%= yield %>
-
-  <%= render "shared/footer" %>
-
+  <div class="body-container">
+    <div class="header">
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+    </div>
+    <div class="main-container">
+      <%= yield %>
+    </div>
+    <div class="footer-container">
+      <%= render "shared/footer" %>
+    </div>
+  </div>
    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
