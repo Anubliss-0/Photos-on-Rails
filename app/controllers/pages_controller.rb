@@ -6,8 +6,4 @@ class PagesController < ApplicationController
     @photos = Photo.all
     @cover_photo = @photos.sample
   end
-
-  def about
-  end
-
 end
