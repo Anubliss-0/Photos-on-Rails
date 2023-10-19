@@ -94,3 +94,5 @@ gem "faker"
 
 #contact-form
 gem 'mail_form', '~> 1.9'
+
+gem "dotenv-rails"
